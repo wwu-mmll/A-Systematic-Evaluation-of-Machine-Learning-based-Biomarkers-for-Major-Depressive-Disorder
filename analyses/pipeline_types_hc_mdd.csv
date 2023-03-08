@@ -1,0 +1,6 @@
+SVMPipeline
+RandomForestPipeline
+LogisticRegressionPipeline
+BoostingPipeline
+NaiveBayesPipeline
+KNNPipeline

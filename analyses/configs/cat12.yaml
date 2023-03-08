@@ -1,0 +1,26 @@
+output_config:
+  name: 'cat12'
+  base_data: '../raw_data/'
+  output_dir: '../results_hc_mdd/'
+  copy_reference_data: False
+  copy_reference_path: ""
+  sample_filter:
+    - 'filter_hc_mdd'
+    - 'filter_hc_mdd_acute'
+    - 'filter_hc_mdd_severe'
+    - 'filter_hc_mdd_male'
+    - 'filter_hc_mdd_female'
+    - 'filter_hc_mdd_age_24_28'
+
+pipelines:
+  skip: False
+  types:
+    - 'SVMPipeline'
+    - 'RandomForestPipeline'
+    - 'LogisticRegressionPipeline'
+    - 'BoostingPipeline'
+    - 'NaiveBayesPipeline'
+    - 'KNNPipeline'
+  redo: False
+  n_processes: 1
+  is_imbalanced_data: False
