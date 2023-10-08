@@ -4,9 +4,9 @@ from os.path import join
 from svgutils.compose import Figure, SVG
 import cairosvg
 
-from process_results.scripts.utils import aggregate_results, create_ensemble_preds, create_results_table, \
+from postprocessing.scripts.utils import aggregate_results, create_ensemble_preds, create_results_table, \
     reliability_corrected_correlations, create_descriptives_statistics_table
-from process_results.scripts.figures import point_plot_vertical, plot_reliability_correction, \
+from postprocessing.scripts.figures import point_plot_vertical, plot_reliability_correction, \
     plot_reliability_correction_grid
 
 

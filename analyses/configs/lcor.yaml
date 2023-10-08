@@ -1,7 +1,7 @@
 output_config:
   name: 'lcor'
   base_data: '../raw_data/'
-  output_dir: '../results_hc_mdd/'
+  output_dir: '../results/'
   copy_reference_data: False
   copy_reference_path: ""
   sample_filter:

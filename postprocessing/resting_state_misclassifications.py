@@ -12,8 +12,8 @@ from sklearn.model_selection import StratifiedKFold
 from photonai.processing import ResultsHandler
 from photonai.base import Hyperpipe
 
-from process_results.scripts.misclassification_frequency import bootstrap_misclassification
-from process_results.scripts.anova import AnovaES
+from postprocessing.scripts.misclassification_frequency import bootstrap_misclassification
+from postprocessing.scripts.anova import AnovaES
 
 plt.style.use(sp.get_style('mmll'))
 
@@ -32,7 +32,7 @@ misclass_name = 'MF'
 # Load and clean data
 # ----------------------------
 
-pheno = pd.read_csv('results_hc_mdd/resting_state/filter_hc_mdd/data_information/multi_modality.csv', na_values=-99)
+pheno = pd.read_csv('results/resting_state/filter_hc_mdd/data_information/multi_modality.csv', na_values=-99)
 
 # fix variables
 pheno['Rem2'] = pheno['Rem'].copy()
@@ -55,16 +55,16 @@ pheno = pheno.rename(columns=variables_to_rename)
 if compute_misclassification:
 
     handler = ResultsHandler()
-    handler.load_from_file("results_hc_mdd/resting_state/filter_hc_mdd/pipeline_results/SVMPipeline/"
+    handler.load_from_file("results/resting_state/filter_hc_mdd/pipeline_results/SVMPipeline/"
                            "svm_pipeline_results_2022-07-11_11-52-52/photon_result_file.json")
     best_config = handler.results.best_config
 
     # load data
-    X = np.load('results_hc_mdd/resting_state/filter_hc_mdd/merger_data/X.npy')
-    y = np.load('results_hc_mdd/resting_state/filter_hc_mdd/merger_data/y.npy')
+    X = np.load('results/resting_state/filter_hc_mdd/merger_data/X.npy')
+    y = np.load('results/resting_state/filter_hc_mdd/merger_data/y.npy')
 
     # load pipeline with best config
-    pipeline = Hyperpipe.load_optimum_pipe("results_hc_mdd/resting_state/filter_hc_mdd/pipeline_results/SVMPipeline/"
+    pipeline = Hyperpipe.load_optimum_pipe("results/resting_state/filter_hc_mdd/pipeline_results/SVMPipeline/"
                                        "svm_pipeline_results_2022-07-11_11-52-52/photon_best_model.photon")
 
     # use same number of splits as in all other analyses

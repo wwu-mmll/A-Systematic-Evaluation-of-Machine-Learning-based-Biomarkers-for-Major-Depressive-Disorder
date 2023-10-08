@@ -1,7 +1,7 @@
 output_config:
   name: 'social_support'
   base_data: '../raw_data/'
-  output_dir: '../results_hc_mdd/'
+  output_dir: '../results/'
   copy_reference_data: False
   sample_filter:
     - 'filter_hc_mdd'
