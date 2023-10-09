@@ -32,22 +32,7 @@ misclass_name = 'MF'
 # Load and clean data
 # ----------------------------
 
-pheno = pd.read_csv('results/resting_state/filter_hc_mdd/data_information/multi_modality.csv', na_values=-99)
-
-# fix variables
-pheno['Rem2'] = pheno['Rem'].copy()
-pheno.loc[pheno['Rem2'] == 1, 'Rem2'] = 0
-
-variables_to_rename = {'Alter': 'Age',
-                       'BDI_Sum': 'BDI', 'HAMD_Sum21': 'HAMD',
-                       'Hosp': 'Number_of_Hospitalizations'}
-vars_hc = ['Age', 'BDI', 'HAMD', 'GAFscore']
-vars_mdd = ['Age', 'BDI', 'HAMD', 'GAFscore',
-            'Number_of_Hospitalizations']
-cat_vars_hc = []
-cat_vars_mdd = ['Rem', 'Rem2', 'Komorbid']
-
-pheno = pheno.rename(columns=variables_to_rename)
+pheno = pd.read_csv('results/dummy_modality/filter_hc_mdd/data_information/multi_modality.csv', na_values=-99)
 
 # ----------------------------
 # Compute misclassifactions

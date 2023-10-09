@@ -48,7 +48,15 @@ reliability corrected correlations are then back-transformed to classification a
 original uncorrected results.
 
 ## Analysis of Systematic Model Errors
+Investigating the systematic predictions errors of a machine learning model can be helpful in uncovering which
+patient subgroups are easiest or most difficult to identify. Run the script `04_analysis_of_model_errors.py` to run this 
+analysis. This is done for a single modality, which is the dummy modality in this example.
 
+## Variational Autoencoder Neural Networks
+As additional non-linear dimensionality reduction method, we investigated the effect of variational autoencoder
+neural networks (standard and contrastive) on model performance. Run the script `05_variational_autoencoder.py` to
+generate latent embeddings of the data using VAE models. These embeddings can be used to run the previous machine learning
+pipeline and evaluate the effect on classification performance.
 
 
 

@@ -15,17 +15,16 @@ from postprocessing.scripts.figures import point_plot_vertical, plot_reliability
 # ---------------------
 
 # define results and data paths
-base_path = ''
+base_path = 'data'
 results_folder = join(base_path, 'results')
 data_folder = join(base_path, 'processed_data')
 
 # specify the subsamples that should be used
-filter_names = ["filter_hc_mdd", "filter_hc_mdd_acute", "filter_hc_mdd_severe", 'filter_hc_mdd_age_24_28',
-                'filter_hc_mdd_female', 'filter_hc_mdd_male']
+filter_names = ["filter_hc_mdd"]
 
 # specify photonai pipelines
 pipelines = ["BoostingPipeline", "KNNPipeline", "LogisticRegressionPipeline", "NaiveBayesPipeline",
-             "RandomForestPipeline", "SVMPipeline", "UnivariateLogisticRegressionPipeline"]
+             "RandomForestPipeline", "SVMPipeline"]
 
 aggregate = True
 run_ensemble = True
@@ -53,13 +52,6 @@ if aggregate:
 if run_ensemble:
     create_ensemble_preds(file='aggregated/predictions.csv', add_to_results=True,
                           samples=filter_names)
-
-    svg = SVG("plots/model_error/corr_plot_filter_hc_mdd_Boosting Classifier/corr_plot_filter_hc_mdd_Boosting Classifier.svg",
-              fix_mpl=True)
-
-    cairosvg.svg2png(url="plots/reliability/reliability_corrected_composite_plot.svg",
-                     write_to='plots/model_error/corr_plot_composite.png',
-                     output_width=1400, background_color='white', dpi=300)
 
 
 # 2.3 correct classification metrics for imperfect reliability
