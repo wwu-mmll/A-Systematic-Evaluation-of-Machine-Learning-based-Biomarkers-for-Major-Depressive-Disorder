@@ -17,8 +17,8 @@ All neuroimaging data modalities have been preprocessed as described in the meth
 Once the preprocessing was done for all modalities, the data was vectorized to create a n_samples x n_features data matrix.
 These matriced and the corresponding diagnostic label was saved as X.npy and y.npy in a dedicated folder for every analysis.
 Since the data used in this study cannot be shared publicly, example data was created using sklearn's `make_classification()` 
-function. The example data is saved under `data/example_modality/` and is provided with this repository. The script to
-create the example data is `make_example_data.py`.
+function. The example data is saved under `data/dummy_modality/` and is provided with this repository. The script to
+create the dummy data is `01_make_dummy_data.py`.
 
 ## Machine Learning Analyses
 The main machine learning pipelines are implemented using PHOTONAI. There are six dedicated pipelines that cover a wide
@@ -29,7 +29,7 @@ be expected for HC versus MDD classification. For any other analyses, all algori
 PHOTONAI Hyperpipe instance. This way, PHOTONAI is able to optimize the choice of the algorithm itself as a hyperparameter
 of the complete machine learning pipeline.
 
-An example ML analysis is provided in file `run_example.py`.
+An example ML analysis is provided in file `02_run_example.py`.
 
 ## Postprocessing
 Once the analyses for all modalities and all subsamples have been run, a postprocessing is done to estimate the effect
@@ -37,7 +37,18 @@ of a reliability improvement as well as the multimodal integration of the predic
 only the predictions from the test sets are used in the multimodal voting classifier to ensure that no data leakage can
 bias the estimate of the generalizability.
 
-## Figures
+An example is provided in the file `03_analyze_results.py`. Run this script to collect the results and produce multimodal
+integration of single-modality predictions. This script will also produce tables and figures.
+
+## Reliability Simulation Analysis
+The postprocessing script `03_analyze_results.py` also includes the code to run the reliability analysis. In essence,
+Matthew's correlation coefficient is calculated based on the model predictions and true diagnostic labels. These
+correlation coefficients are then transformed as described in the publication based on classical test theory. The 
+reliability corrected correlations are then back-transformed to classification accuracy to compare them with the
+original uncorrected results.
+
+## Analysis of Systematic Model Errors
+
 
 
 
