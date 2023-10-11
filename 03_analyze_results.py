@@ -1,13 +1,13 @@
 import pandas as pd
 from os.path import join
 
-from svgutils.compose import Figure, SVG
-import cairosvg
+#from svgutils.compose import Figure, SVG
+#import cairosvg
 
 from postprocessing.scripts.utils import aggregate_results, create_ensemble_preds, create_results_table, \
     reliability_corrected_correlations, create_descriptives_statistics_table
-from postprocessing.scripts.figures import point_plot_vertical, plot_reliability_correction, \
-    plot_reliability_correction_grid
+#from postprocessing.scripts.figures import point_plot_vertical, plot_reliability_correction, \
+#    plot_reliability_correction_grid
 
 
 # ---------------------
@@ -27,14 +27,14 @@ pipelines = ["BoostingPipeline", "KNNPipeline", "LogisticRegressionPipeline", "N
 
 aggregate = True
 run_ensemble = True
-run_reliability_correction = True
+run_reliability_correction = False
 
-create_tables = True
-create_samples_statistics = True
+create_tables = False
+create_samples_statistics = False
 
-plot_corr = True
-plot_figure_2 = True
-create_reliability_plots = True
+plot_corr = False
+plot_figure_2 = False
+create_reliability_plots = False
 
 # --------------------------------
 # 2 Aggregate and process results
@@ -50,7 +50,7 @@ if aggregate:
 # 2.2 create ensemble predictions
 if run_ensemble:
     create_ensemble_preds(file='aggregated/predictions.csv', add_to_results=True,
-                          samples=filter_names)
+                          samples=filter_names, modalities=['dummy_modality'])
 
 
 # 2.3 correct classification metrics for imperfect reliability

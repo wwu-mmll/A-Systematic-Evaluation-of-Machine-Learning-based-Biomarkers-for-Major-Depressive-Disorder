@@ -12,8 +12,8 @@ from sklearn.metrics import matthews_corrcoef, balanced_accuracy_score, recall_s
 from macs_datahub.main import find_latest_photonai_results
 from photonai.processing import ResultsHandler
 
-from scientific_plots.plots.corr_plot import corr_plot
-from scientific_plots.utils import savefig
+#from scientific_plots.plots.corr_plot import corr_plot
+#from scientific_plots.utils import savefig
 
 
 def calculate_metrics(frame):
@@ -119,7 +119,7 @@ def aggregate_results(results_folder: str, filter_names: list, pipeline_types: l
                     continue
 
                 # load json containing results
-                result_json = os.path.join(current_result_folder, latest_photonai_folder, "photon_result_file.json")
+                result_json = os.path.join(current_result_folder, latest_photonai_folder, "photonai_results.json")
                 current_config = {'Modality': [os.path.basename(os.path.normpath(mod))],
                                   'Sample': [filter_name],
                                   'PipelineType': [pipeline_type],

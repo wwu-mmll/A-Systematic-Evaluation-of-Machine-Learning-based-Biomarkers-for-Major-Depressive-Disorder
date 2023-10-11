@@ -3,3 +3,4 @@ numpy
 photonai
 git+https://github.com/NilsWinter/scientific_plots.git
 cairosvg
+svgutils

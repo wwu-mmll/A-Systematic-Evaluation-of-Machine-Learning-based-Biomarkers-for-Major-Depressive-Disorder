@@ -1,0 +1,3 @@
+[submodule "scientific_plots"]
+	path = scientific_plots
+	url = https://github.com/NilsWinter/scientific_plots.git

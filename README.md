@@ -10,6 +10,8 @@ necessary Python packages using the requirements.txt file.
 conda create -n multivariate_biomarker python==3.8
 conda activate multivariate_biomarker
 pip install -r requirements.txt
+cd scientific_plots
+pip install -e .
 ```
 
 ## Data Preprocessing
@@ -45,7 +47,8 @@ only the predictions from the test sets are used in the multimodal voting classi
 bias the estimate of the generalizability.
 
 An example is provided in the file `03_analyze_results.py`. Run this script to collect the results and produce multimodal
-integration of single-modality predictions. This script will also produce tables and figures.
+integration of single-modality predictions. This script will also produce tables and figures. The aggregated results
+are saved to a folder called `aggregated`.
 
 ## Reliability Simulation Analysis
 The postprocessing script `03_analyze_results.py` also includes the code to run the reliability analysis. In essence,
