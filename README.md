@@ -65,7 +65,12 @@ neural networks (standard and contrastive) on model performance. Run the script 
 generate latent embeddings of the data using VAE models. These embeddings can be used to run the previous machine learning
 pipeline and evaluate the effect on classification performance.
 
+# Author
+If you have any questions on this code or our analyses, please feel free to contact me either by opening a Github Issue
+in this repo or by mailing me directly.
 
+Nils Winter
+nils.r.winter@uni-muenster.de
 
 
 
