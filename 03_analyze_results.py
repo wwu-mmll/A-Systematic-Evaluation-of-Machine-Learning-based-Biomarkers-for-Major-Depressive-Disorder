@@ -15,9 +15,8 @@ from postprocessing.scripts.figures import point_plot_vertical, plot_reliability
 # ---------------------
 
 # define results and data paths
-base_path = 'data'
-results_folder = join(base_path, 'results')
-data_folder = join(base_path, 'processed_data')
+results_folder = './results'
+data_folder = './results'
 
 # specify the subsamples that should be used
 filter_names = ["filter_hc_mdd"]

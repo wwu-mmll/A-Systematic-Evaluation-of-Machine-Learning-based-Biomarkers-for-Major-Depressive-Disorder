@@ -29,7 +29,14 @@ be expected for HC versus MDD classification. For any other analyses, all algori
 PHOTONAI Hyperpipe instance. This way, PHOTONAI is able to optimize the choice of the algorithm itself as a hyperparameter
 of the complete machine learning pipeline.
 
-An example ML analysis is provided in file `02_run_example.py`.
+An example ML analysis is provided in file `02_run_example.py`. Once you run this script, all classification pipelines
+will be computed and the results are saved to `results/dummy_modality/filter_hc_mdd/pipeline_results`. This analysis
+runs approximately 30-60 minutes for this dummy data modality.
+
+Of course, you
+can also run this script using any other data that you provide. Just create a folder structure similar to the one
+provided in the example dummy_modality. You can then copy the `dummy_modality.yaml` file in the `analyses` folder and change
+the name of data modality to whatever your folder and modality is called. 
 
 ## Postprocessing
 Once the analyses for all modalities and all subsamples have been run, a postprocessing is done to estimate the effect
