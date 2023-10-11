@@ -1,7 +1,7 @@
 output_config:
   name: 'dummy_modality'
-  base_data: '../data/'
-  output_dir: '../results/'
+  base_data: './data/'
+  output_dir: './results/'
   copy_reference_data: False
   copy_reference_path: ""
   sample_filter:

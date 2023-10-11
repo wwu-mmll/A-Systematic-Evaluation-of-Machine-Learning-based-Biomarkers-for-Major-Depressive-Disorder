@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./macs_datahub')
 from macs_datahub.main import run_pipeline
 
 

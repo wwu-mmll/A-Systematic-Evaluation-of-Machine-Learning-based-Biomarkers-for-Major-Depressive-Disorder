@@ -7,7 +7,7 @@ from joblib import Memory
 
 cache_dir = './tmp/kernel_cache'
 
-memory = Memory(cachedir=cache_dir, verbose=0)
+memory = Memory(location=cache_dir, verbose=0)
 
 
 class PipelineBase:

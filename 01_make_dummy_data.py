@@ -18,7 +18,7 @@ X, y = make_classification(
     shuffle=True
 )
 
-dummy_data_folder = os.path.join('results', 'dummy_modality', 'filter_hc_mdd')
+dummy_data_folder = os.path.join('results', 'dummy_modality', 'filter_hc_mdd', 'merger_data')
 os.makedirs(dummy_data_folder)
 np.save(os.path.join(dummy_data_folder, 'X.npy'), X)
 np.save(os.path.join(dummy_data_folder, 'y.npy'), y)
